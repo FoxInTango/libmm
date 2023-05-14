@@ -11,7 +11,7 @@ public:
     virtual ~Allocator();
 public:
     virtual void* alloc(const unsigned int& size);
-    virtual int release(const void* size);
+    virtual int release(const void* address);
 };
 namespaceEnd
 namespaceEnd
