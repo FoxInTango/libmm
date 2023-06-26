@@ -14,8 +14,7 @@ public:
     virtual void* alloc(const unsigned int& size);
     virtual int release(const void* address);
 public:
-    template <typename T>
-    T* alloc() { return 0; }
+    template <typename T> T* alloc() { return 0; }
 };
 namespaceEnd
 #endif // !_MM_ALLOCTOR_H_foxintango
