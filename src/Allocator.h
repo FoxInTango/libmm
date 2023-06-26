@@ -17,4 +17,5 @@ public:
     template <typename T> T* alloc() { return 0; }
 };
 namespaceEnd
+namespaceEnd
 #endif // !_MM_ALLOCTOR_H_foxintango
