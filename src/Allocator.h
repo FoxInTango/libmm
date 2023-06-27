@@ -13,8 +13,15 @@ public:
 public:
     virtual void* alloc(const unsigned int& size);
     virtual int release(const void* address);
-public:
-    template <typename T> T* alloc() { return 0; }
+public:// 析构通知机制
+    template <typename T> T* alloc() { 
+        T* t = alloc(sizeof(T) + sizeof(Allocator*)); 
+        if(t){ 
+            Allocator*& alloctor = (Allocator*)(t + sizeof(T));
+            alloctor = this;
+            return  new(t)T();
+        } 
+    }
 };
 namespaceEnd
 namespaceEnd
